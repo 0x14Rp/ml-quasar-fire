@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "8f6dc50c-d38c-4c9e-894e-2d79c517e625",
+		"name": "meli-quasar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8418122"
+	},
+	"item": [
+		{
+			"name": "obtener-ubicacion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"satellites\": [\n    {\n      \"name\": \"kenobi\",\n      \"distance\": 100.0,\n      \"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\n    },\n    {\n      \"name\": \"skywalker\",\n      \"distance\": 115.5,\n      \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n    },\n    {\n      \"name\": \"sato\",\n      \"distance\": 142.7,\n      \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ud2qeu27ci.execute-api.sa-east-1.amazonaws.com/v1/topsecret",
+					"protocol": "https",
+					"host": [
+						"ud2qeu27ci",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v1",
+						"topsecret"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener-mensajes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ud2qeu27ci.execute-api.sa-east-1.amazonaws.com/v1/topsecret_split",
+					"protocol": "https",
+					"host": [
+						"ud2qeu27ci",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v1",
+						"topsecret_split"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar-mensaje",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "WkTkNFN45c44HN0DSNwbH7aIRqW0ZvFa3iSPa8lb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"distance\": 100.0,\n    \"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ud2qeu27ci.execute-api.sa-east-1.amazonaws.com/v1/topsecret_split/:{name}",
+					"protocol": "https",
+					"host": [
+						"ud2qeu27ci",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v1",
+						"topsecret_split",
+						":{name}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "{name}",
+							"value": "kenobi",
+							"description": "skywalker / sato"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar-mensajes",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://ud2qeu27ci.execute-api.sa-east-1.amazonaws.com/v1/clear_secret",
+					"protocol": "https",
+					"host": [
+						"ud2qeu27ci",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"v1",
+						"clear_secret"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
